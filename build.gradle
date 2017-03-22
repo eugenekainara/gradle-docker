@@ -33,6 +33,7 @@ sourceSets {
 configurations {
     integTestCompile.extendsFrom testCompile
     integTestRuntime.extendsFrom testRuntime
+    jar.baseName = 'gradle-docker'
 }
 
 dependencies {
