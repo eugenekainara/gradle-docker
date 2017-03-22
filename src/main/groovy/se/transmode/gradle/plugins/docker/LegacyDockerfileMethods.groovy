@@ -153,4 +153,27 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
         dockerfile.add(copySpec)
     }
 
+    /**
+     * This method is deprecated. Use the new Dockerfile DSL instead:
+     */
+    @Deprecated
+    void healthCheck(String cmd) {
+        dockerfile.healthCheck(cmd)
+    }
+
+    /**
+     * This method is deprecated. Use the new Dockerfile DSL instead:
+     */
+    @Deprecated
+    void healthCheck(Integer interval, Integer timeout, Integer retries, String cmd) {
+        dockerfile.healthCheck(interval, timeout, retries, cmd)
+    }
+
+    /**
+     * This method is deprecated. Use the new Dockerfile DSL instead:
+     */
+    @Deprecated
+    void disableHealthCheck() {
+        dockerfile.disableHealthCheck()
+    }
 }
