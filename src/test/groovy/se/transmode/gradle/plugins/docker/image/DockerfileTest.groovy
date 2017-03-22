@@ -75,6 +75,28 @@ class DockerfileTest {
     }
 
     @Test
+    void healthCheckWithString() {
+        final dockerfile = new Dockerfile(new File("contextDir"))
+        dockerfile.healthCheck 'curl localhost || exit 1'
+        assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK CMD curl localhost || exit 1']))
+    }
+
+    @Test
+    void healthCheckWithAllValues() {
+        final dockerfile = new Dockerfile(new File("contextDir"))
+        dockerfile.healthCheck(30, 30, 3, 'curl localhost || exit 1')
+        assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK --interval=30s --timeout=30s --retries=3 CMD curl localhost || exit 1']))
+    }
+
+    @Test
+    void disableHealthCheck() {
+        final dockerfile = new Dockerfile(new File("contextDir"))
+        dockerfile.disableHealthCheck()
+        assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK NONE']))
+    }
+
+
+    @Test
     void cmdWithString() {
         final dockerfile = new Dockerfile(new File("contextDir"))
         dockerfile.cmd '/bin/bash'

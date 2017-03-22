@@ -109,15 +109,15 @@ class Dockerfile {
         this.append('ENTRYPOINT ["' + cmd.join('", "') + '"]')
     }
 
-    void healthcheck(String cmd) {
+    void healthCheck(String cmd) {
         this.append("HEALTHCHECK CMD ${cmd}")
     }
 
-    void healthcheck(Integer interval, Integer timeout, Integer retries, String cmd) {
+    void healthCheck(Integer interval, Integer timeout, Integer retries, String cmd) {
         this.append("HEALTHCHECK --interval=${interval}s --timeout=${timeout}s --retries=${retries} CMD ${cmd}")
     }
 
-    void disableHealthcheck() {
+    void disableHealthCheck() {
         this.append("HEALTHCHECK NONE")
     }
 
