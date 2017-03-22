@@ -65,6 +65,9 @@ The available instructions are:
 |                        | `addFile(String source, String dest)`
 |                        | `addFile(File source, String dest)`
 | `CMD`                  | `defaultCommand(List cmd)`
+| `HEALTHCHECK`          | `healthcheck(String cmd)`
+| `HEALTHCHECK`          | `healthcheck(Integer interval, Integer timeout, Integer retries, String cmd)`
+| `HEALTHCHECK NONE`     | `disableHealthcheck()`
 | `ENTRYPOINT`           | `entryPoint(List entryPoint)`
 | `ENV`                  | `setEnvironment(String key, String val)`
 | `EXPOSE`               | `exposePort(Integer port)`

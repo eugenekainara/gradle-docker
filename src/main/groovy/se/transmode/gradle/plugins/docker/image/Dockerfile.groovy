@@ -109,6 +109,18 @@ class Dockerfile {
         this.append('ENTRYPOINT ["' + cmd.join('", "') + '"]')
     }
 
+    void healthcheck(String cmd) {
+        this.append("HEALTHCHECK CMD ${cmd}")
+    }
+
+    void healthcheck(Integer interval, Integer timeout, Integer retries, String cmd) {
+        this.append("HEALTHCHECK --interval=${interval}s --timeout=${timeout}s --retries=${retries} CMD ${cmd}")
+    }
+
+    void disableHealthcheck() {
+        this.append("HEALTHCHECK NONE")
+    }
+
     private static boolean isUrl(String url) {
         try {
             new URL(url)
