@@ -75,6 +75,20 @@ class DockerfileTest {
     }
 
     @Test
+    void cmdWithString() {
+        final dockerfile = new Dockerfile(new File("contextDir"))
+        dockerfile.cmd '/bin/bash'
+        assertThat dockerfile.instructions, is(equalTo(['CMD /bin/bash']))
+    }
+
+    @Test
+    void cmdWithList() {
+        final dockerfile = new Dockerfile(new File("contextDir"))
+        dockerfile.cmd(['/bin/bash', '-i'])
+        assertThat dockerfile.instructions, is(equalTo(['CMD ["/bin/bash", "-i"]']))
+    }
+
+    @Test
     void healthCheckWithString() {
         final dockerfile = new Dockerfile(new File("contextDir"))
         dockerfile.healthCheck 'curl localhost || exit 1'
@@ -93,21 +107,6 @@ class DockerfileTest {
         final dockerfile = new Dockerfile(new File("contextDir"))
         dockerfile.disableHealthCheck()
         assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK NONE']))
-    }
-
-
-    @Test
-    void cmdWithString() {
-        final dockerfile = new Dockerfile(new File("contextDir"))
-        dockerfile.cmd '/bin/bash'
-        assertThat dockerfile.instructions, is(equalTo(['CMD /bin/bash']))
-    }
-
-    @Test
-    void cmdWithList() {
-        final dockerfile = new Dockerfile(new File("contextDir"))
-        dockerfile.cmd(['/bin/bash', '-i'])
-        assertThat dockerfile.instructions, is(equalTo(['CMD ["/bin/bash", "-i"]']))
     }
 
     @Test
