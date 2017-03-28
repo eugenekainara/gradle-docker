@@ -158,7 +158,7 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void healthCheck(String cmd) {
-        dockerfile.healthCheck(cmd)
+        dockerfile.healthcheck(cmd)
     }
 
     /**
@@ -166,7 +166,7 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void healthCheck(Integer interval, Integer timeout, Integer retries, String cmd) {
-        dockerfile.healthCheck(interval, timeout, retries, cmd)
+        dockerfile.healthcheck(interval, timeout, retries, cmd)
     }
 
     /**
@@ -174,6 +174,6 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void disableHealthCheck() {
-        dockerfile.disableHealthCheck()
+        dockerfile.healthchecknone()
     }
 }
