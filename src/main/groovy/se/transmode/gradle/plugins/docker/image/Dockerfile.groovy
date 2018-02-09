@@ -117,6 +117,10 @@ class Dockerfile {
         this.append("HEALTHCHECK --interval=${interval}s --timeout=${timeout}s --retries=${retries} CMD ${cmd}")
     }
 
+    void healthcheck(Integer interval, Integer timeout, Integer retries, Integer startPeriod, String cmd) {
+        this.append("HEALTHCHECK --interval=${interval}s --timeout=${timeout}s --retries=${retries} --start-period=${startPeriod}s CMD ${cmd}")
+    }
+
     void healthchecknone() {
         this.append("HEALTHCHECK NONE")
     }

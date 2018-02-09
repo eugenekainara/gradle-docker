@@ -103,6 +103,13 @@ class DockerfileTest {
     }
 
     @Test
+    void healthcheckWithStartPeriod() {
+        final dockerfile = new Dockerfile(new File("contextDir"))
+        dockerfile.healthcheck(30, 30, 3, 60, 'curl localhost || exit 1')
+        assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK --interval=30s --timeout=30s --retries=3 --start-period=60s CMD curl localhost || exit 1']))
+    }
+
+    @Test
     void healthchecknone() {
         final dockerfile = new Dockerfile(new File("contextDir"))
         dockerfile.healthchecknone()
@@ -253,4 +260,12 @@ class DockerfileTest {
         }
         assertThat(dockerfile.instructions, equalTo(['EXPOSE 162/udp']))
     }
- }
+
+    @Test
+    void entryPoint() {
+        final dockerfile = new Dockerfile(new File("contextDir"))
+        dockerfile.entrypoint(["/bin/bash", "echo", "entrypoint in exec mode"])
+        assertThat dockerfile.instructions, is(equalTo(['ENTRYPOINT ["/bin/bash", "echo", "entrypoint in exec mode"]']))
+    }
+
+}

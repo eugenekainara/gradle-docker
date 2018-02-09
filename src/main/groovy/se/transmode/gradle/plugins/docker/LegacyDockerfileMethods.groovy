@@ -57,7 +57,7 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void entryPoint(List entryPoint) {
-        dockerfile.entrypoint(cmd)
+        dockerfile.entrypoint(entryPoint)
     }
 
     /**
@@ -167,6 +167,14 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
     @Deprecated
     void healthCheck(Integer interval, Integer timeout, Integer retries, String cmd) {
         dockerfile.healthcheck(interval, timeout, retries, cmd)
+    }
+
+    /**
+     * This method is deprecated. Use the new Dockerfile DSL instead:
+     */
+    @Deprecated
+    void healthCheck(Integer interval, Integer timeout, Integer retries, Integer startPeriod, String cmd) {
+        dockerfile.healthcheck(interval, timeout, retries, startPeriod, cmd)
     }
 
     /**
