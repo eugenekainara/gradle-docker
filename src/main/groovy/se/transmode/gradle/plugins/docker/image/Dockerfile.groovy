@@ -109,19 +109,29 @@ class Dockerfile {
         this.append('ENTRYPOINT ["' + cmd.join('", "') + '"]')
     }
 
-    void healthcheck(String cmd) {
-        this.append("HEALTHCHECK CMD ${cmd}")
+    void healthCheck(String cmd) {
+        healthCheck(null, null, null, null, cmd)
     }
 
-    void healthcheck(Integer interval, Integer timeout, Integer retries, String cmd) {
-        this.append("HEALTHCHECK --interval=${interval}s --timeout=${timeout}s --retries=${retries} CMD ${cmd}")
+    void healthCheck(Integer interval, String cmd) {
+        healthCheck(interval, null,null,null, cmd)
     }
 
-    void healthcheck(Integer interval, Integer timeout, Integer retries, Integer startPeriod, String cmd) {
-        this.append("HEALTHCHECK --interval=${interval}s --timeout=${timeout}s --retries=${retries} --start-period=${startPeriod}s CMD ${cmd}")
+    void healthCheck(Integer interval, Integer timeout, Integer retries, String cmd) {
+        healthCheck(interval, timeout, retries, null, cmd)
     }
 
-    void healthchecknone() {
+    void healthCheck(Integer interval, Integer timeout, Integer retries, Integer startPeriod, String cmd) {
+        StringBuilder sb = new StringBuilder("HEALTHCHECK ")
+        if (interval != null) sb.append("--interval=${interval}s ")
+        if (timeout != null) sb.append("--timeout=${timeout}s ")
+        if (retries != null) sb.append("--retries=${retries} ")
+        if (startPeriod != null) sb.append("--start-period=${startPeriod}s ")
+        sb.append("CMD ${cmd}")
+        this.append(sb)
+    }
+
+    void healthCheckNone() {
         this.append("HEALTHCHECK NONE")
     }
 

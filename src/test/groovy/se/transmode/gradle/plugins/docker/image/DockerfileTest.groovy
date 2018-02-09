@@ -91,28 +91,28 @@ class DockerfileTest {
     @Test
     void healthcheckWithString() {
         final dockerfile = new Dockerfile(new File("contextDir"))
-        dockerfile.healthcheck 'curl localhost || exit 1'
+        dockerfile.healthCheck 'curl localhost || exit 1'
         assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK CMD curl localhost || exit 1']))
     }
 
     @Test
     void healthcheckWithAllValues() {
         final dockerfile = new Dockerfile(new File("contextDir"))
-        dockerfile.healthcheck(30, 30, 3, 'curl localhost || exit 1')
+        dockerfile.healthCheck(30, 30, 3, 'curl localhost || exit 1')
         assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK --interval=30s --timeout=30s --retries=3 CMD curl localhost || exit 1']))
     }
 
     @Test
     void healthcheckWithStartPeriod() {
         final dockerfile = new Dockerfile(new File("contextDir"))
-        dockerfile.healthcheck(30, 30, 3, 60, 'curl localhost || exit 1')
+        dockerfile.healthCheck(30, 30, 3, 60, 'curl localhost || exit 1')
         assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK --interval=30s --timeout=30s --retries=3 --start-period=60s CMD curl localhost || exit 1']))
     }
 
     @Test
-    void healthchecknone() {
+    void healthCheckNone() {
         final dockerfile = new Dockerfile(new File("contextDir"))
-        dockerfile.healthchecknone()
+        dockerfile.healthCheckNone()
         assertThat dockerfile.instructions, is(equalTo(['HEALTHCHECK NONE']))
     }
 

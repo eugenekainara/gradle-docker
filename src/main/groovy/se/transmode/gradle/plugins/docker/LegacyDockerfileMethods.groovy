@@ -158,7 +158,15 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void healthCheck(String cmd) {
-        dockerfile.healthcheck(cmd)
+        dockerfile.healthCheck(cmd)
+    }
+
+    /**
+     * This method is deprecated. Use the new Dockerfile DSL instead:
+     */
+    @Deprecated
+    void healthCheck(Integer interval, String cmd) {
+        dockerfile.healthCheck(interval, cmd)
     }
 
     /**
@@ -166,7 +174,7 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void healthCheck(Integer interval, Integer timeout, Integer retries, String cmd) {
-        dockerfile.healthcheck(interval, timeout, retries, cmd)
+        dockerfile.healthCheck(interval, timeout, retries, cmd)
     }
 
     /**
@@ -174,7 +182,7 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void healthCheck(Integer interval, Integer timeout, Integer retries, Integer startPeriod, String cmd) {
-        dockerfile.healthcheck(interval, timeout, retries, startPeriod, cmd)
+        dockerfile.healthCheck(interval, timeout, retries, startPeriod, cmd)
     }
 
     /**
@@ -182,6 +190,6 @@ class LegacyDockerfileMethods implements GroovyInterceptable {
      */
     @Deprecated
     void disableHealthCheck() {
-        dockerfile.healthchecknone()
+        dockerfile.healthCheckNone()
     }
 }
