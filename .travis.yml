@@ -17,12 +17,8 @@ cache:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 deploy:
+  # deploy jar's when TAG commit is build
   - provider: script
-      script: ./gradlew publishPlugins
-      on:
-        branch: master
-  - provider: script
-      script: ./gradlew publishPlugins
-      on:
-        tags: true
-
+    script: bash gradlew publishPlugins
+    on:
+      tags: true
