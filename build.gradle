@@ -14,7 +14,7 @@ apply from: file('gradle/idea.gradle')
 apply from: file('gradle/publish.gradle')
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+    gradleVersion = '4.4'
 }
 
 sourceSets {
@@ -50,11 +50,11 @@ dependencies {
 task integTest(type: Test) {
     group = 'verification'
     description = 'Runs the integration tests.'
-    testClassesDir = sourceSets.integTest.output.classesDir
+    testClassesDirs = sourceSets.integTest.output.classesDirs
     classpath = sourceSets.integTest.runtimeClasspath
 
-    reports.html.destination = file("${reporting.baseDir}/integTests")
-    reports.junitXml.destination = file("$buildDir/integTest-results")
+    reports.html.destination file("${reporting.baseDir}/integTests")
+    reports.junitXml.destination file("$buildDir/integTest-results")
 }
 
 // run integration tests after unit tests if both are scheduled for execution
@@ -79,14 +79,6 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
 }
-
-/* Workaround for JDK bug (https://bugs.openjdk.java.net/browse/JDK-8051012)
-   regression bug in 7u65, fixed in 7u80 and 8u40
- */
-compileTestGroovy.groovyOptions.forkOptions.jvmArgs = ['-noverify']
-test.jvmArgs '-noverify'
-integTest.jvmArgs '-noverify'
-
 
 artifacts {
     archives jar

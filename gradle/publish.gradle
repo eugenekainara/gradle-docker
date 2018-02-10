@@ -1,5 +1,6 @@
 apply plugin: 'maven-publish'
 apply plugin: 'artifactory-publish'
+apply plugin: 'com.gradle.plugin-publish'
 
 publishing {
     publications {
@@ -72,3 +73,18 @@ artifactory {
         }
     }
 }
+
+pluginBundle {
+    website = 'https://github.com/eugenekainara/gradle-docker'
+    vcsUrl = 'https://github.com/eugenekainara/gradle-docker'
+    description = 'Gradle plugin to build und publish Docker images from the build script.'
+    tags = ['docker']
+
+    plugins {
+        dockerPlugin {
+            id = 'se.eugenekainara.docker'
+            displayName = 'Gradle Docker plugin'
+        }
+    }
+}
+

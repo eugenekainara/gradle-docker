@@ -1,0 +1,262 @@
+Initialized native services in: /Users/eugene/.gradle/native
+Found daemon DaemonInfo{pid=9372, address=[8301ad3d-008a-4d73-b0ce-ab182dee96c1 port:49574, addresses:[/0:0:0:0:0:0:0:1, /127.0.0.1]], state=Idle, lastBusy=1518253680256, context=DefaultDaemonContext[uid=4998bcb4-e18d-41c3-9889-9495a724805b,javaHome=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home,daemonRegistryDir=/Users/eugene/.gradle/daemon,pid=9372,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=UA,-Duser.language=en,-Duser.variant]} however its context does not match the desired criteria.
+At least one daemon option is different.
+Wanted: DefaultDaemonContext[uid=null,javaHome=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home,daemonRegistryDir=/Users/eugene/.gradle/daemon,pid=9850,idleTimeout=null,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Actual: DefaultDaemonContext[uid=4998bcb4-e18d-41c3-9889-9495a724805b,javaHome=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home,daemonRegistryDir=/Users/eugene/.gradle/daemon,pid=9372,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=UA,-Duser.language=en,-Duser.variant]
+
+  Looking for a different daemon...
+The client will now receive all logging from the daemon (pid: 9694). The daemon log file: /Users/eugene/.gradle/daemon/4.4/daemon-9694.out.log
+Starting 13th build in daemon [uptime: 14 mins 22.856 secs, performance: 99%, no major garbage collections]
+Using 8 worker leases.
+Creating new cache for fileHashes, path /Users/eugene/git/gradle-docker/.gradle/4.4/fileHashes/fileHashes.bin, access org.gradle.cache.internal.DefaultCacheAccess@6e48934d
+Starting Build
+Settings evaluated using settings file '/Users/eugene/git/gradle-docker/settings.gradle'.
+Projects loaded. Root project using build file '/Users/eugene/git/gradle-docker/build.gradle'.
+Included projects: [root project 'gradle-docker']
+Evaluating root project 'gradle-docker' using build file '/Users/eugene/git/gradle-docker/build.gradle'.
+Creating new cache for metadata-1.1/results, path /Users/eugene/.gradle/caches/transforms-1/metadata-1.1/results.bin, access org.gradle.cache.internal.DefaultCacheAccess@510ce563
+Creating new cache for metadata-2.36/module-metadata, path /Users/eugene/.gradle/caches/modules-2/metadata-2.36/module-metadata.bin, access org.gradle.cache.internal.DefaultCacheAccess@7708b8ad
+Creating new cache for metadata-2.36/module-artifact, path /Users/eugene/.gradle/caches/modules-2/metadata-2.36/module-artifact.bin, access org.gradle.cache.internal.DefaultCacheAccess@7708b8ad
+All projects evaluated.
+Selected primary task 'clean' from project :
+Selected primary task 'build' from project :
+Creating new cache for annotation-processors, path /Users/eugene/git/gradle-docker/.gradle/4.4/fileContent/annotation-processors.bin, access org.gradle.cache.internal.DefaultCacheAccess@5d519e1a
+Tasks to be executed: [task ':clean', task ':compileJava', task ':compileGroovy', task ':processResources', task ':classes', task ':jar', task ':javadoc', task ':javadocJar', task ':sourcesJar', task ':assemble', task ':compileTestJava', task ':compileTestGroovy', task ':processTestResources', task ':testClasses', task ':test', task ':compileIntegTestJava', task ':compileIntegTestGroovy', task ':processIntegTestResources', task ':integTestClasses', task ':generatePomFileForMavenPublication', task ':publishMavenPublicationToMavenLocal', task ':publishToMavenLocal', task ':integTest', task ':check', task ':build']
+Creating new cache for resourceHashesCache, path /Users/eugene/git/gradle-docker/.gradle/4.4/fileHashes/resourceHashesCache.bin, access org.gradle.cache.internal.DefaultCacheAccess@6e48934d
+Creating new cache for taskHistory, path /Users/eugene/git/gradle-docker/.gradle/4.4/taskHistory/taskHistory.bin, access org.gradle.cache.internal.DefaultCacheAccess@25d3ca38
+Creating new cache for outputFiles, path /Users/eugene/git/gradle-docker/.gradle/buildOutputCleanup/outputFiles.bin, access org.gradle.cache.internal.DefaultCacheAccess@25efa2bc
+:clean (Thread[Task worker for ':',5,main]) started.
+:clean
+Putting task artifact state for task ':clean' into context took 0.0 secs.
+Up-to-date check for task ':clean' took 0.0 secs. It is not up-to-date because:
+  Task has not declared any outputs.
+:clean (Thread[Task worker for ':',5,main]) completed. Took 0.011 secs.
+:compileJava (Thread[Task worker for ':',5,main]) started.
+:compileJava
+Putting task artifact state for task ':compileJava' into context took 0.0 secs.
+Up-to-date check for task ':compileJava' took 0.02 secs. It is not up-to-date because:
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/java/main has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/java/main/se has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/java/main/se/transmode has been removed.
+All input files are considered out-of-date for incremental task ':compileJava'.
+Compiling with JDK Java compiler API.
+:compileJava (Thread[Task worker for ':',5,main]) completed. Took 0.099 secs.
+:compileGroovy (Thread[Task worker for ':',5,main]) started.
+:compileGroovy
+Putting task artifact state for task ':compileGroovy' into context took 0.0 secs.
+Up-to-date check for task ':compileGroovy' took 0.004 secs. It is not up-to-date because:
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/main has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/main/se has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/main/se/transmode has been removed.
+Starting process 'Gradle Worker Daemon 5'. Working directory: /Users/eugene/.gradle/workers Command: /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /Users/eugene/.gradle/caches/4.4/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Worker Daemon 5'
+Successfully started process 'Gradle Worker Daemon 5'
+Started Gradle worker daemon (0.436 secs) with fork options DaemonForkOptions{executable=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/java, minHeapSize=null, maxHeapSize=null, jvmArgs=[], classpath=[/Users/eugene/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/groovy-all-2.4.12.jar, /Users/eugene/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/ant-1.9.9.jar, /Users/eugene/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/lib/ant-launcher-1.9.9.jar], keepAliveMode=SESSION}.
+This JVM does not support getting OS memory, so no OS memory status updates will be broadcast
+Initialized native services in: /Users/eugene/.gradle/native
+:compileGroovy (Thread[Task worker for ':',5,main]) completed. Took 2.427 secs.
+:processResources (Thread[Task worker for ':',5,main]) started.
+:processResources
+Putting task artifact state for task ':processResources' into context took 0.0 secs.
+Up-to-date check for task ':processResources' took 0.001 secs. It is not up-to-date because:
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/main has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/main/nginx.Dockerfile has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/main/META-INF has been removed.
+:processResources (Thread[Task worker for ':',5,main]) completed. Took 0.011 secs.
+:classes (Thread[Task worker for ':',5,main]) started.
+:classes
+Skipping task ':classes' as it has no actions.
+:classes (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:jar (Thread[Task worker for ':',5,main]) started.
+:jar
+Putting task artifact state for task ':jar' into context took 0.0 secs.
+Up-to-date check for task ':jar' took 0.005 secs. It is not up-to-date because:
+  Output property 'archivePath' file /Users/eugene/git/gradle-docker/build/libs/gradle-docker-1.3-SNAPSHOT.jar has been removed.
+:jar (Thread[Task worker for ':',5,main]) completed. Took 0.048 secs.
+:javadoc (Thread[Task worker for ':',5,main]) started.
+:javadoc
+Putting task artifact state for task ':javadoc' into context took 0.0 secs.
+Up-to-date check for task ':javadoc' took 0.01 secs. It is not up-to-date because:
+  Output property 'outputDirectory' file /Users/eugene/git/gradle-docker/build/docs/javadoc has been removed.
+  Output property 'outputDirectory' file /Users/eugene/git/gradle-docker/build/docs/javadoc/se has been removed.
+  Output property 'outputDirectory' file /Users/eugene/git/gradle-docker/build/docs/javadoc/se/transmode has been removed.
+Starting process 'command '/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/javadoc''. Working directory: /Users/eugene/git/gradle-docker Command: /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/javadoc @/Users/eugene/git/gradle-docker/build/tmp/javadoc/javadoc.options
+Successfully started process 'command '/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/javadoc''
+:javadoc (Thread[Task worker for ':',5,main]) completed. Took 1.0 secs.
+:javadocJar (Thread[Task worker for ':',5,main]) started.
+:javadocJar
+Putting task artifact state for task ':javadocJar' into context took 0.0 secs.
+Up-to-date check for task ':javadocJar' took 0.001 secs. It is not up-to-date because:
+  Output property 'archivePath' file /Users/eugene/git/gradle-docker/build/libs/gradle-docker-1.3-SNAPSHOT-javadoc.jar has been removed.
+:javadocJar (Thread[Task worker for ':',5,main]) completed. Took 0.013 secs.
+:sourcesJar (Thread[Task worker for ':',5,main]) started.
+:sourcesJar
+Putting task artifact state for task ':sourcesJar' into context took 0.0 secs.
+Up-to-date check for task ':sourcesJar' took 0.002 secs. It is not up-to-date because:
+  Output property 'archivePath' file /Users/eugene/git/gradle-docker/build/libs/gradle-docker-1.3-SNAPSHOT-sources.jar has been removed.
+:sourcesJar (Thread[Task worker for ':',5,main]) completed. Took 0.014 secs.
+:assemble (Thread[Task worker for ':',5,main]) started.
+:assemble
+Skipping task ':assemble' as it has no actions.
+:assemble (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:compileTestJava (Thread[Task worker for ':',5,main]) started.
+:compileTestJava
+Putting task artifact state for task ':compileTestJava' into context took 0.0 secs.
+file or directory '/Users/eugene/git/gradle-docker/src/test/java', not found
+Skipping task ':compileTestJava' as it has no source files and no previous output files.
+:compileTestJava NO-SOURCE
+:compileTestJava (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:compileTestGroovy (Thread[Task worker for ':',5,main]) started.
+:compileTestGroovy
+Putting task artifact state for task ':compileTestGroovy' into context took 0.0 secs.
+Up-to-date check for task ':compileTestGroovy' took 0.233 secs. It is not up-to-date because:
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/test has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/test/se has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/test/se/transmode has been removed.
+:compileTestGroovy (Thread[Task worker for ':',5,main]) completed. Took 0.834 secs.
+:processTestResources (Thread[Task worker for ':',5,main]) started.
+:processTestResources
+Putting task artifact state for task ':processTestResources' into context took 0.0 secs.
+Up-to-date check for task ':processTestResources' took 0.001 secs. It is not up-to-date because:
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/test has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/test/testTargetDir has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/test/testTargetDir/fileB.txt has been removed.
+:processTestResources (Thread[Task worker for ':',5,main]) completed. Took 0.007 secs.
+:testClasses (Thread[Task worker for ':',5,main]) started.
+:testClasses
+Skipping task ':testClasses' as it has no actions.
+:testClasses (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:test (Thread[Task worker for ':',5,main]) started.
+:test
+Putting task artifact state for task ':test' into context took 0.0 secs.
+Up-to-date check for task ':test' took 0.013 secs. It is not up-to-date because:
+  Output property 'binResultsDir' file /Users/eugene/git/gradle-docker/build/test-results/test/binary has been removed.
+  Output property 'binResultsDir' file /Users/eugene/git/gradle-docker/build/test-results/test/binary/results.bin has been removed.
+  Output property 'binResultsDir' file /Users/eugene/git/gradle-docker/build/test-results/test/binary/output.bin.idx has been removed.
+Starting process 'Gradle Test Executor 6'. Working directory: /Users/eugene/git/gradle-docker Command: /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Dorg.gradle.native=false -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.9.jar_17d4cd69b5d9b44b59ac09d2e4756e43/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,inclnolocationclasses=false,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /Users/eugene/.gradle/caches/4.4/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 6'
+Successfully started process 'Gradle Test Executor 6'
+Gradle Test Executor 6 started executing tests.
+
+se.transmode.gradle.plugins.docker.LegacyDockerfileMethodsTest > testHealthCheckWithTimeoutOptions STANDARD_OUT
+    The healthCheck method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.LegacyDockerfileMethodsTest > testDisableHealthCheck STANDARD_OUT
+    The disableHealthCheck method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.LegacyDockerfileMethodsTest > testHealthCheck STANDARD_OUT
+    The healthCheck method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.DockerTaskTest > testAddFileWithDir STANDARD_OUT
+    The addFile method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.DockerTaskTest > testExposePort STANDARD_OUT
+    The exposePort method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.DockerTaskTest > switchUser STANDARD_OUT
+    The switchUser method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.DockerTaskTest > testExposePortUdp STANDARD_OUT
+    The exposePort method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.DockerTaskTest > buildDockerfileFromFileAndExtend STANDARD_OUT
+    The setEnvironment method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+
+se.transmode.gradle.plugins.docker.DockerTaskTest > testExposeMultiplePorts STANDARD_OUT
+    The exposePort method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+Gradle Test Executor 6 finished executing tests.
+Finished generating test XML results (0.002 secs) into: /Users/eugene/git/gradle-docker/build/test-results/test
+Generating HTML test report...
+Finished generating test html results (0.007 secs) into: /Users/eugene/git/gradle-docker/build/reports/tests/test
+:test (Thread[Task worker for ':',5,main]) completed. Took 10.799 secs.
+:compileIntegTestJava (Thread[Task worker for ':',5,main]) started.
+:compileIntegTestJava
+Putting task artifact state for task ':compileIntegTestJava' into context took 0.0 secs.
+file or directory '/Users/eugene/git/gradle-docker/src/integTest/java', not found
+Skipping task ':compileIntegTestJava' as it has no source files and no previous output files.
+:compileIntegTestJava NO-SOURCE
+:compileIntegTestJava (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:compileIntegTestGroovy (Thread[Task worker for ':',5,main]) started.
+:compileIntegTestGroovy
+Putting task artifact state for task ':compileIntegTestGroovy' into context took 0.0 secs.
+Up-to-date check for task ':compileIntegTestGroovy' took 0.012 secs. It is not up-to-date because:
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/integTest has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/integTest/se has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/classes/groovy/integTest/se/transmode has been removed.
+:compileIntegTestGroovy (Thread[Task worker for ':',5,main]) completed. Took 0.395 secs.
+:processIntegTestResources (Thread[Task worker for ':',5,main]) started.
+:processIntegTestResources
+Putting task artifact state for task ':processIntegTestResources' into context took 0.0 secs.
+Up-to-date check for task ':processIntegTestResources' took 0.001 secs. It is not up-to-date because:
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/integTest has been removed.
+  Output property 'destinationDir' file /Users/eugene/git/gradle-docker/build/resources/integTest/nginx.Dockerfile has been removed.
+:processIntegTestResources (Thread[Task worker for ':',5,main]) completed. Took 0.006 secs.
+:integTestClasses (Thread[Task worker for ':',5,main]) started.
+:integTestClasses
+Skipping task ':integTestClasses' as it has no actions.
+:integTestClasses (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:generatePomFileForMavenPublication (Thread[Task worker for ':',5,main]) started.
+:generatePomFileForMavenPublication
+Putting task artifact state for task ':generatePomFileForMavenPublication' into context took 0.0 secs.
+Up-to-date check for task ':generatePomFileForMavenPublication' took 0.0 secs. It is not up-to-date because:
+  Task.upToDateWhen is false.
+:generatePomFileForMavenPublication (Thread[Task worker for ':',5,main]) completed. Took 0.007 secs.
+:publishMavenPublicationToMavenLocal (Thread[Task worker for ':',5,main]) started.
+:publishMavenPublicationToMavenLocal
+Putting task artifact state for task ':publishMavenPublicationToMavenLocal' into context took 0.0 secs.
+Up-to-date check for task ':publishMavenPublicationToMavenLocal' took 0.0 secs. It is not up-to-date because:
+  Task has not declared any outputs.
+Publishing to repository null
+:publishMavenPublicationToMavenLocal (Thread[Task worker for ':',5,main]) completed. Took 0.063 secs.
+:publishToMavenLocal (Thread[Task worker for ':',5,main]) started.
+:publishToMavenLocal
+Skipping task ':publishToMavenLocal' as it has no actions.
+:publishToMavenLocal (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:integTest (Thread[Task worker for ':',5,main]) started.
+:integTest
+Putting task artifact state for task ':integTest' into context took 0.0 secs.
+Up-to-date check for task ':integTest' took 0.02 secs. It is not up-to-date because:
+  Output property 'binResultsDir' file /Users/eugene/git/gradle-docker/build/test-results/integTest/binary has been removed.
+  Output property 'binResultsDir' file /Users/eugene/git/gradle-docker/build/test-results/integTest/binary/results.bin has been removed.
+  Output property 'binResultsDir' file /Users/eugene/git/gradle-docker/build/test-results/integTest/binary/output.bin.idx has been removed.
+Starting process 'Gradle Test Executor 7'. Working directory: /Users/eugene/git/gradle-docker Command: /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Dorg.gradle.native=false -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.9.jar_17d4cd69b5d9b44b59ac09d2e4756e43/jacocoagent.jar=destfile=build/jacoco/integTest.exec,append=true,inclnolocationclasses=false,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /Users/eugene/.gradle/caches/4.4/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 7'
+Successfully started process 'Gradle Test Executor 7'
+Gradle Test Executor 7 started executing tests.
+
+se.transmode.gradle.plugins.docker.CreateDockerfileTest > compareDockerfileBuiltOldstyle STANDARD_OUT
+    The runCommand method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+    The runCommand method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+    The runCommand method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+    The addInstruction method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+    The volume method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+    The defaultCommand method has been deprecated and is scheduled to be removed. Use the new dockerfile DSL instead.
+
+Gradle Test Executor 7 finished executing tests.
+Finished generating test XML results (0.001 secs) into: /Users/eugene/git/gradle-docker/build/integTest-results
+Generating HTML test report...
+Finished generating test html results (0.003 secs) into: /Users/eugene/git/gradle-docker/build/reports/integTests
+:integTest (Thread[Task worker for ':',5,main]) completed. Took 8.246 secs.
+:check (Thread[Task worker for ':',5,main]) started.
+:check
+Skipping task ':check' as it has no actions.
+:check (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:build (Thread[Task worker for ':',5,main]) started.
+:build
+Skipping task ':build' as it has no actions.
+:build (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+
+BUILD SUCCESSFUL in 24s
+16 actionable tasks: 16 executed
+Stopped 1 worker daemon(s).

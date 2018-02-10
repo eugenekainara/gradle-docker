@@ -1,7 +1,9 @@
-dist: precise
+dist: trusty
 language: java
+env:
+  - JAVA_OPTS="-Dgradle.publish.key=${GRADLE_KEY} -Dgradle.publish.secret=${GRADLE_SECRET}"
 jdk:
-  - openjdk7
+  - openjdk8
 script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
@@ -14,3 +16,13 @@ cache:
     - $HOME/.gradle/wrapper/
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+deploy:
+  - provider: script
+      script: ./gradlew publishPlugins
+      on:
+        branch: master
+  - provider: script
+      script: ./gradlew publishPlugins
+      on:
+        tags: true
+
