@@ -1,15 +1,18 @@
-apply plugin: 'groovy'
-apply plugin: 'jacoco'
-
 buildscript {
     // inspired by https://github.com/Netflix/gradle-template
     apply from: file('gradle/buildscript.gradle'), to: buildscript
+}
+
+plugins {
+    id 'ch.netzwerg.release' version '1.2.5'
 }
 
 repositories {
     jcenter()
 }
 
+apply plugin: 'groovy'
+apply plugin: 'jacoco'
 apply from: file('gradle/idea.gradle')
 apply from: file('gradle/publish.gradle')
 
@@ -84,4 +87,10 @@ artifacts {
     archives jar
     archives javadocJar
     archives sourcesJar
+}
+
+release {
+    dependsOn build
+    push = project.hasProperty("push")
+    tagPrefix = ''
 }
